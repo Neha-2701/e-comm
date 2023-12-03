@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const port = process.env.PORT || 5500;
 
 require('./db/config')
 const User = require('./db/User')
@@ -78,4 +79,6 @@ app.get("/search/:key", async(req,resp)=>{
     })
     resp.send(result)
 })
-app.listen(5500)
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});

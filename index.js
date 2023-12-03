@@ -79,6 +79,4 @@ app.get("/search/:key", async(req,resp)=>{
     })
     resp.send(result)
 })
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+app.listen(port||5500)
